@@ -48,3 +48,13 @@ def test_transform_feature_rechaza_intervalo_degenerado() -> None:
 def test_validate_range_rechaza_nan() -> None:
     with pytest.raises(ValueError, match="finito"):
         validate_range(float("nan"), 0, 100)
+
+
+def test_ci_intentional_failure() -> None:
+    """Validate that CI rejects a failing test."""
+    assert 1 == 2, "Intentional failure for CI validation"
+
+
+def test_ci_intentional_failure() -> None:
+    """Validate that CI rejects a failing test."""
+    assert 1 == 2, "Intentional failure for CI validation"
